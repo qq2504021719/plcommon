@@ -3,21 +3,47 @@
 安装步骤
 ------------
 
-#### 1.
+#### 1.下载
 ```
 composer require pl/common
 ```
 
+#### 2.`config\app.php`配置
+```php
+'providers' => [
+    ...,
+    Pl\Common\CommonServiceProvider::class,
+]
+```
 
-#### 2.
+#### 3.composer更新
+```
+composer dump-autoload 
+```
+
+#### 4.发布文件
 ```
 php artisan vendor:publish --provider="Pl\Common\CommonServiceProvider"
 ```
 
+
 1.项目错误信息发送邮件(示例)
 ------------
+#### 1.`config\mail.php`邮箱配置,配置在.env文件中
+```
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.exmail.qq.com
+MAIL_PORT=465
+MAIL_USERNAME=邮箱账号
+MAIL_PASSWORD=邮箱密码
+MAIL_ENCRYPTION=SSL
+```
 
-#### `App\Exceptions\Handler`内`report`方法
+
+#### 2.`App\Exceptions\Handler`内`report`方法
+
+> `post_email`方法参数查看源代码
+
 ```php
 use Pl\Common\Lib\MailCommon;
 
