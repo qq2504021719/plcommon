@@ -1,0 +1,16 @@
+{
+    "name": "pl/common",
+    "description": "1",
+    "authors": [
+        {
+            "name": "ericsh",
+            "email": "1104534940@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Pl\\Common\\": "src/"
+        }
+    }
+}
